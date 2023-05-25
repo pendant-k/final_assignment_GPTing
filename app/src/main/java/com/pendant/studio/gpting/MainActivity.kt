@@ -11,13 +11,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         // bottom Navigator
 
-        loadFragment(SearchFragment())
+        loadFragment(ChatFragment())
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNav)
         // Add bottom Navigation event
         bottomNav.setOnItemSelectedListener {
             when (it.itemId) {
-                R.id.bottom_search_item-> {
-                    loadFragment(SearchFragment())
+                R.id.bottom_chat_item-> {
+                    loadFragment(ChatFragment())
                     true
                 }
                 R.id.bottom_storage_item-> {

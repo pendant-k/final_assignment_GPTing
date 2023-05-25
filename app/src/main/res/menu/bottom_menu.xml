@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-        <item android:id="@+id/bottom_search_item"
-            android:icon="@drawable/baseline_search_24"
-            android:title="@string/search"/>
+        <item android:id="@+id/bottom_chat_item"
+            android:icon="@drawable/baseline_chat_24"
+            android:title=""/>
         <item android:id="@+id/bottom_storage_item"
             android:icon="@drawable/baseline_folder_24"
-            android:title="@string/storage" />
+            android:title="" />
     <item android:id="@+id/bottom_setting_item"
         android:icon="@drawable/baseline_settings_24"
-        android:title="@string/setting" />
+        android:title=""/>
 </menu>
