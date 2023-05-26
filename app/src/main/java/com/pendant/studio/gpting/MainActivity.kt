@@ -3,9 +3,13 @@ package com.pendant.studio.gpting
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
+    lateinit var chatAdapter : ChatAdapter
+    val data = mutableListOf<ChatData>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -39,5 +43,17 @@ class MainActivity : AppCompatActivity() {
         transaction.replace(R.id.container,fragment)
         transaction.commit()
     }
+
+//    val recyclerView = findViewById<RecyclerView>(R.id.chatlist_recycleView)
+//
+//    private fun initRecycler(){
+//        chatAdapter = ChatAdapter(this)
+//        recyclerView.adapter = chatAdapter
+//
+//        data.apply {
+//            add(ChatData(question = "Hello", answer = "Hello, How can I assist you today?"))
+//            add(ChatData(question = "Hi", answer = "Hello, How can I assist you today?\nI can help you"))
+//        }
+//    }
 
 }

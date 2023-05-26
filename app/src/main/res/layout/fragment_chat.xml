@@ -10,6 +10,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/chatlist_recycleView"
+            android:layout_width="468dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toTopOf="@+id/chat_bar_wrapper"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/chat_item" />
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/chat_bar_wrapper"
             android:layout_width="0dp"
@@ -27,8 +39,7 @@
                 android:layout_height="0dp"
                 android:layout_marginLeft="5dp"
                 android:background="@null"
-                android:ems="15"
-                android:inputType="text|textMultiLine"
+                android:inputType="textMultiLine"
                 android:maxLength="2000"
                 android:maxLines="4"
                 android:padding="3dp"
@@ -51,6 +62,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/chat_editText" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
