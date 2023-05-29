@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -26,6 +28,13 @@ class ChatFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_chat, container, false)
+
+        val sendButton = view.findViewById<Button>(R.id.send_button)
+        val chatEditText = view.findViewById<EditText>(R.id.chat_editText)
+
+        sendButton.setOnClickListener {
+            
+        }
 
     recyclerView = view.findViewById(R.id.chatlist_recycleView)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())

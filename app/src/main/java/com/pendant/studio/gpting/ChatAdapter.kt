@@ -26,11 +26,9 @@ class ChatAdapter(private val context: Context) : RecyclerView.Adapter<ChatAdapt
 
 
     inner class ViewHolder(view: View): RecyclerView.ViewHolder(view){
-        // question items
-        private val questionLabel : TextView = itemView.findViewById(R.id.question_label)
+        // question item
         private val questionText : TextView = itemView.findViewById(R.id.question_textView)
-        // answer items
-        private val answerLabel : TextView = itemView.findViewById(R.id.answer_label)
+        // answer item
         private val answerText : TextView = itemView.findViewById(R.id.answer_textView)
 
         fun bind(item: ChatData){
