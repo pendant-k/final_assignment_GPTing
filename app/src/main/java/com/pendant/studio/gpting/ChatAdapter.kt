@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import io.noties.markwon.Markwon
 
 class ChatAdapter(private val context: Context) : RecyclerView.Adapter<ChatAdapter.ViewHolder>() {
     var data = mutableListOf<ChatData>()
@@ -32,8 +33,12 @@ class ChatAdapter(private val context: Context) : RecyclerView.Adapter<ChatAdapt
         private val answerText : TextView = itemView.findViewById(R.id.answer_textView)
 
         fun bind(item: ChatData){
+
             questionText.text = item.question
-            answerText.text = item.answer
+//            answerText.text = item.answer
+
+            val markwon : Markwon = Markwon.create(context);
+            markwon.setMarkdown(answerText, item.answer)
         }
     }
 
