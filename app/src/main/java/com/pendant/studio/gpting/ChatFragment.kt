@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ProgressBar
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.Gson
@@ -66,6 +68,8 @@ class ChatFragment : Fragment() {
 
         val sendButton = view.findViewById<Button>(R.id.send_button)
         val chatEditText = view.findViewById<EditText>(R.id.chat_editText)
+        val progressBar = view.findViewById<ProgressBar>(R.id.progress_circular)
+        progressBar.isVisible = false
 
         // TODO : Create Request Body
 
@@ -74,6 +78,10 @@ class ChatFragment : Fragment() {
 
             // Check is empty string
             if(chatText != ""){
+
+                CoroutineScope(Dispatchers.Main).launch {
+                    progressBar.isVisible = true
+                }
                 networkManager.makePostRequest("https://us-central1-mobile-prc.cloudfunctions.net/app/api", question = chatText  ,object : Callback {
                     override fun onFailure(call: Call, e: IOException) {
                         Log.d("response",e.toString())
@@ -95,6 +103,8 @@ class ChatFragment : Fragment() {
                         CoroutineScope(Dispatchers.Main).launch {
                             adapter.data = ChatListHolder.getList()
                             adapter.notifyDataSetChanged()
+                            chatEditText.text.clear()
+                            progressBar.isVisible = false
                         }
                     }
 

@@ -10,11 +10,22 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <ProgressBar
+            android:id="@+id/progress_circular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/chatlist_recycleView" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/chatlist_recycleView"
             android:layout_width="468dp"
             android:layout_height="0dp"
+            android:layout_marginBottom="16dp"
             android:orientation="vertical"
+            android:paddingBottom="20dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toTopOf="@+id/chat_bar_wrapper"
             app:layout_constraintEnd_toEndOf="parent"
