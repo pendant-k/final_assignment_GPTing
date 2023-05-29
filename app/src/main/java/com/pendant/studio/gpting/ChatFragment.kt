@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
+import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -77,7 +78,7 @@ class ChatFragment : Fragment() {
             val chatText = chatEditText.text.toString()
 
             // Check is empty string
-            if(chatText != ""){
+            if(chatText.trim() != ""){
 
                 CoroutineScope(Dispatchers.Main).launch {
                     progressBar.isVisible = true
@@ -110,7 +111,12 @@ class ChatFragment : Fragment() {
 
                 })
             } else {
-                // TODO : Toast Message -> Empty String Warning
+                CoroutineScope(Dispatchers.Main).launch {
+                    val toastMessage = "Question is empty!"
+                    val toast = Toast.makeText(activity,toastMessage,Toast.LENGTH_SHORT)
+                    toast.show()
+                    chatEditText.text.clear()
+                }
             }
         }
 
