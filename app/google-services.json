@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "496649910304",
+    "project_id": "mobile-prc",
+    "storage_bucket": "mobile-prc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:496649910304:android:117f94922a28f9eb922445",
+        "android_client_info": {
+          "package_name": "com.pendant.studio.gpting"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "496649910304-qtpgejem3732m6i7mdvtq182adcgktek.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pendant.studio.gpting",
+            "certificate_hash": "e4adc153c39df109001a188e1834477dd4c30db6"
+          }
+        },
+        {
+          "client_id": "496649910304-8j5elggidbfj66j1d8kscpp4v3osj7pd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdX44NKRvgwUDLSjuLJec01sjZGtJ1iks"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "496649910304-8j5elggidbfj66j1d8kscpp4v3osj7pd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
