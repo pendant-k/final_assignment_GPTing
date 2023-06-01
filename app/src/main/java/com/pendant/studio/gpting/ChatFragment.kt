@@ -53,6 +53,7 @@ class ChatFragment : Fragment() {
     // network manager Instance
     private lateinit var networkManager : NetworkManager
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.d("fragment","Fragment init")
@@ -105,6 +106,7 @@ class ChatFragment : Fragment() {
                             adapter.data = ChatListHolder.getList()
                             adapter.notifyDataSetChanged()
                             chatEditText.text.clear()
+                            chatEditText.clearFocus()
                             progressBar.isVisible = false
                         }
                     }

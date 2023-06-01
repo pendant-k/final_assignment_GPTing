@@ -12,13 +12,14 @@
 
         <ImageView
             android:id="@+id/profile_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_marginTop="100dp"
+            android:background="@drawable/question_box"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:src="@tools:sample/avatars" />
+            tools:src="@drawable/baseline_person_24" />
 
         <TextView
             android:id="@+id/user_email_textView"
@@ -31,6 +32,18 @@
             app:layout_constraintTop_toBottomOf="@+id/profile_image" />
 
         <Button
+            android:id="@+id/chnage_profile_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change Profile Image"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_email_textView" />
+
+        <Button
+            style="?android:attr/borderlessButtonStyle"
+            android:textColor="@color/white"
             android:id="@+id/logout_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

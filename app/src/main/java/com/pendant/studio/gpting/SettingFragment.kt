@@ -45,8 +45,6 @@ class SettingFragment : Fragment() {
                      startActivity(intent)
                 }
         }
-
-
         return view
     }
 }
