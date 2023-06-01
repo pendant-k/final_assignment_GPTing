@@ -1,9 +1,13 @@
 package com.pendant.studio.gpting
 
+import android.app.AlertDialog
 import android.content.Context
+import android.content.DialogInterface
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import io.noties.markwon.Markwon
@@ -22,7 +26,32 @@ class ChatAdapter(private val context: Context) : RecyclerView.Adapter<ChatAdapt
 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(data[position])
+        val currentItem = data[position]
+        holder.bind(currentItem)
+        val saveButton = holder.itemView.findViewById<ImageButton>(R.id.save_button)
+        saveButton.setOnClickListener {
+
+            AlertDialog.Builder(context)
+                .setTitle("Save")
+                .setMessage("Do you want to save this script?")
+                .setPositiveButton("ok", object : DialogInterface.OnClickListener {
+                    override fun onClick(dialog: DialogInterface, which: Int) {
+                        // TODO : implement start Create Doc Activity
+                        val intent = Intent(context,CreateDocumentActivity::class.java)
+                        context.startActivity(intent.apply {
+                            putExtra("question", currentItem.question)
+                            putExtra("answer", currentItem.answer)
+                        })
+                    }
+                })
+                .setNegativeButton("cancel", object : DialogInterface.OnClickListener {
+                    override fun onClick(dialog: DialogInterface, which: Int) {
+                        null
+                    }
+                })
+                .create()
+                .show()
+        }
     }
 
 
