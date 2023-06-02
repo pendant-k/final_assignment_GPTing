@@ -33,7 +33,7 @@ class ChatAdapter(private val context: Context) : RecyclerView.Adapter<ChatAdapt
 
             AlertDialog.Builder(context)
                 .setTitle("Save")
-                .setMessage("Do you want to save this script?")
+                .setMessage("Do you want to save this document?")
                 .setPositiveButton("ok", object : DialogInterface.OnClickListener {
                     override fun onClick(dialog: DialogInterface, which: Int) {
                         // TODO : implement start Create Doc Activity

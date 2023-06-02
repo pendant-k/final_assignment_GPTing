@@ -20,15 +20,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // Get current user information
-        val user = Firebase.auth.currentUser
-        if(user != null){
-
-            CoroutineScope(Dispatchers.Main).launch{
-                // Show Toast Message when user is logged in
-                Toast.makeText(this@MainActivity,"Hello ${user.email}",Toast.LENGTH_SHORT).show()
-            }
-        }
-
         // bottom Navigator
 
         loadFragment(ChatFragment())
